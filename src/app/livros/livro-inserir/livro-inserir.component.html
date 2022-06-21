@@ -1,0 +1,55 @@
+<mat-card>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Insira o ID do Livro</mat-label>
+        <input matInput type="text" [(ngModel)]="id">
+        <button
+            *ngIf="id"
+            matSuffix
+            mat-icon-button
+            (click)="id=0">
+
+            <mat-icon>close</mat-icon>
+
+        </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Insira o Título do Livro</mat-label>
+        <input matInput type="text" [(ngModel)]="titulo">
+        <button
+            *ngIf="titulo"
+            matSuffix
+            mat-icon-button
+            (click)="titulo=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Insira o Autor do Livro</mat-label>
+        <input matInput type="text" [(ngModel)]="autor">
+        <button
+            *ngIf="autor"
+            matSuffix
+            mat-icon-button
+            (click)="autor=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Insira o Nº de Páginas do Livro</mat-label>
+      <input matInput type="text" [(ngModel)]="numero_paginas">
+      <button
+          *ngIf="numero_paginas"
+          matSuffix
+          mat-icon-button
+          (click)="numero_paginas=0">
+          <mat-icon>close</mat-icon>
+      </button>
+  </mat-form-field>
+
+  <button color="accent" mat-raised-button (click)="onAdicionarLivro()">Cadastrar Livro</button>
+
+</mat-card>

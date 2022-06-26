@@ -21,6 +21,6 @@ export class LivroInserirComponent {
       form.value.autor,
       form.value.numero_paginas
     );
-    form.resetForm;
+    form.resetForm();
   }
 }

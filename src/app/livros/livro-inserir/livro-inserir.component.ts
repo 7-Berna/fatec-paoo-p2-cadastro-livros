@@ -1,31 +1,26 @@
-import { Component, EventEmitter, Output } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Livro } from '../livro.model';
+import { LivroService } from '../services/livro.service';
 
 @Component({
-    selector: 'app-livro-inserir',
-    templateUrl: './livro-inserir.component.html',
-    styleUrls: ['./livro-inserir.component.css']
+  selector: 'app-livro-inserir',
+  templateUrl: './livro-inserir.component.html',
+  styleUrls: ['./livro-inserir.component.css'],
 })
-export class LivroInserirComponent{
+export class LivroInserirComponent {
+  constructor(public livroService: LivroService) {}
 
-    @Output()
-    livroAdicionado = new EventEmitter<Livro>();
-
-    id: number;
-    titulo: string;
-    autor: string;
-    numero_paginas: number;
-
-    onAdicionarLivro(){
-        //1. construir um objeto livro que contém id, titulo, autor e numero de paginas
-        const livro: Livro = {
-            id: this.id,
-            titulo: this.titulo,
-            autor: this.autor,
-            numero_paginas: this.numero_paginas
-        }
-        //2. passar esse objeto como argumento para o método emit
-        this.livroAdicionado.emit(livro);
+  onAdicionarLivro(form: NgForm) {
+    if (form.invalid) {
+      return;
     }
-
+    this.livroService.adicionarLivro(
+      form.value.id,
+      form.value.titulo,
+      form.value.autor,
+      form.value.numero_paginas
+    );
+    form.resetForm;
+  }
 }

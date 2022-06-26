@@ -4,6 +4,10 @@
         <p>Nome do Livro: {{livro.titulo}}</p>
         <p>Autor do Livro: {{livro.autor}}</p>
         <p>Nº de Páginas: {{livro.numero_paginas}}</p>
+        <mat-action-row>
+          <button mat-button color="primary" >Editar</button>
+          <button mat-button color="warn" >Remover</button>
+        </mat-action-row>
     </mat-expansion-panel>
 </mat-accordion>
 <p class="mat-body-1" style="text-align: center;" *ngIf="livros.length <= 0">Não há livros cadastrados</p>

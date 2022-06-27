@@ -31,4 +31,8 @@ export class LivroListaComponent implements OnInit, OnDestroy {
     this.livroSubscription.unsubscribe();
   }
 
+  onDelete (id: string): void{
+    this.livroService.removerLivro(id);
+}
+
 }

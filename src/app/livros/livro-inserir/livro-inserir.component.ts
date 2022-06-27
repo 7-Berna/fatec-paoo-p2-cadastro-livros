@@ -16,7 +16,6 @@ export class LivroInserirComponent {
       return;
     }
     this.livroService.adicionarLivro(
-      form.value.id,
       form.value.titulo,
       form.value.autor,
       form.value.numero_paginas

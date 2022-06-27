@@ -1,10 +1,6 @@
 <mat-card>
   <form (submit)="onAdicionarLivro(livroForm)" #livroForm="ngForm">
     <mat-form-field appearance="fill">
-      <input required matInput minlength="1" pattern="[0-9]+" placeholder="Insira o ID do Livro" type="text" name="id" ngModel #id="ngModel" />
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
       <input required matInput minlength="4" placeholder="Insira o Título do Livro" type="text" name="titulo" ngModel #titulo="ngModel" />
     </mat-form-field>
 

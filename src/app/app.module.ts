@@ -18,6 +18,8 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 
 
 import { LivroListaComponent } from './livros/livro-lista/livro-lista.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -41,6 +43,8 @@ import { LivroListaComponent } from './livros/livro-lista/livro-lista.component'
     MatToolbarModule,
 
     HttpClientModule,
+
+    AppRoutingModule,
   ],
 
   bootstrap: [AppComponent]
